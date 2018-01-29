@@ -7,3 +7,7 @@ The kit targets all aspects of an IoT application from hardware interfacing, to 
 The IoT Development Kit family targets a variety of IoT application requirements by providing a range of different hardware platforms, spanning from very compact low-power ARM-based designs to powerful multi-core, latest generation Intel Atom gateways. 
 
 **Each IoT Development Kit packages all the necessary hardware and software components to bootstrap a new project: gateway, cable and accessories, network connectivity options, IoT middleware framework, and cloud connectivity.**
+
+## Available Development Kits
+- [EDCK 4001](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001/README.md)
+- [EDCK 4005]()
