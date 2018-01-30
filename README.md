@@ -10,4 +10,6 @@ The IoT Development Kit family targets a variety of IoT application requirements
 
 ## Available Development Kits
 - [EDCK 4001](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001/README.md)
-- [EDCK 4005]()
+- **IoT Dev Kit 4005**
+  - [REGATE-20-25-33-DK00](https://github.com/eurotech/iot-dev-kit/tree/IoT_Dev_Kit_4005)
+  - [REGATE-20-25-35-DK00](https://github.com/eurotech/iot-dev-kit/tree/IoT_Dev_Kit_4005)
