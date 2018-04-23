@@ -301,7 +301,7 @@
                 <esf:value>NO_PARITY</esf:value>
             </esf:property>
             <esf:property name="modbus.rtu.port.name" array="false" encrypted="false" type="String">
-                <esf:value>/dev/ttyUSB0</esf:value>
+                <esf:value>/dev/ttyCOM0</esf:value>
             </esf:property>
             <esf:property name="modbus.rtu.stopbits" array="false" encrypted="false" type="String">
                 <esf:value>ONE_STOP_BIT</esf:value>
