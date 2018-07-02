@@ -344,7 +344,7 @@
                 <esf:value>FLOW_CONTROL_DISABLED</esf:value>
             </esf:property>
             <esf:property name="modbus.rtu.parity" array="false" encrypted="false" type="String">
-                <esf:value>NO_PARITY</esf:value>
+                <esf:value>ODD_PARITY</esf:value>
             </esf:property>
             <esf:property name="modbus.rtu.port.name" array="false" encrypted="false" type="String">
                 <esf:value>/dev/ttyCOM0</esf:value>
