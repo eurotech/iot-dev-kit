@@ -271,6 +271,52 @@
             </esf:property>
         </esf:properties>
     </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.provisioning.ProvisioningService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="account-name" type="String">
+                <esf:value>eurotech-provision</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="retry-interval" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="activation-key" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ca-authentication" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="retry-max-attempts" type="Integer">
+                <esf:value>-1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="timeout" type="Integer">
+                <esf:value>90</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.provisioning.ProvisioningService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.pid" type="String">
+                <esf:value>org.eclipse.kura.provisioning.ProvisioningService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="broker-url" type="String">
+                <esf:value>mqtts://broker-sandbox.everyware-cloud.com:8883/</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="true" name="password" type="Password">
+                <esf:value>V2UhY29tZTEyMzQ1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="provisioned" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="client-id" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="username" type="String">
+                <esf:value/>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
     <esf:configuration pid="modbusDriver">
         <esf:properties>
             <esf:property name="service.factoryPid" array="false" encrypted="false" type="String">
