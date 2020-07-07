@@ -1,0 +1,705 @@
+<?xml version="1.0" encoding="UTF-8"?><esf:configurations xmlns:esf="http://eurotech.com/esf/2.0" xmlns:ocd="http://www.osgi.org/xmlns/metatype/v1.2.0">
+    <esf:configuration pid="modbusDriver">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="access.type" type="String">
+                <esf:value>RTU</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.baudrate" type="Integer">
+                <esf:value>9600</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.flowcontrolout" type="String">
+                <esf:value>FLOW_CONTROL_DISABLED</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.holding.register.write.mode" type="String">
+                <esf:value>WRITE_MULTIPLE_REGISTERS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.register.max.transfer.size" type="Integer">
+                <esf:value>123</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.transaction.retry" type="Integer">
+                <esf:value>3</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.driver.modbus</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.databits" type="Integer">
+                <esf:value>8</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>modbusDriver</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.coil.write.mode" type="String">
+                <esf:value>WRITE_MULTIPLE_COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.timeout" type="Integer">
+                <esf:value>5</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.register.minimum.gap.size" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.encoding" type="String">
+                <esf:value>SERIAL_ENCODING_RTU</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.port.name" type="String">
+                <esf:value>/dev/ttyO4</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.tcp-udp.port" type="Integer">
+                <esf:value>502</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.parity" type="String">
+                <esf:value>ODD_PARITY</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.flowcontrolin" type="String">
+                <esf:value>FLOW_CONTROL_DISABLED</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.rtu.stopbits" type="String">
+                <esf:value>ONE_STOP_BIT</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.tcp-udp.ip" type="String">
+                <esf:value>127.0.0.1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.bit.minimum.gap.size" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="modbus.bit.max.transfer.size" type="Integer">
+                <esf:value>1968</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="PUBLISHER">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="emitter.port.count" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.CloudPublisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="componentId" type="String">
+                <esf:value>PUBLISHER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="receiver.port.count" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="factoryComponent" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="componentDescription" type="String">
+                <esf:value>A wire component which publishes data to the cloud platform</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="CloudPublisher.target" type="String">
+                <esf:value>(kura.service.pid=default.devkit.publisher)</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="componentName" type="String">
+                <esf:value>Publisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="publish.position" type="String">
+                <esf:value>none</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.CloudPublisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>PUBLISHER</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.wire.graph.WireGraphService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="WireGraph" type="String">
+                <esf:value>{"components":[{"pid":"TIMER","inputPortCount":0,"outputPortCount":1,"renderingProperties":{"position":{"x":-360,"y":-40},"inputPortNames":{},"outputPortNames":{}}},{"pid":"PUBLISHER","inputPortCount":1,"outputPortCount":0,"renderingProperties":{"position":{"x":80,"y":-40},"inputPortNames":{},"outputPortNames":{}}},{"pid":"modbusAsset","inputPortCount":1,"outputPortCount":1,"renderingProperties":{"position":{"x":-140,"y":-40},"inputPortNames":{},"outputPortNames":{}}}],"wires":[{"emitter":"TIMER","emitterPort":0,"receiver":"modbusAsset","receiverPort":0},{"emitter":"modbusAsset","emitterPort":0,"receiver":"PUBLISHER","receiverPort":0}]}</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="default.devkit.publisher">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="app.topic" type="String">
+                <esf:value>A1/$assetName</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="message.type" type="String">
+                <esf:value>data</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="qos" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="appId" type="String">
+                <esf:value>W1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="retain" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="priority" type="Integer">
+                <esf:value>7</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.cloud.publisher.CloudPublisher</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="cloud.endpoint.service.pid" type="String">
+                <esf:value>org.eclipse.kura.cloud.CloudService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>default.devkit.publisher</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="TIMER">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.Timer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="componentId" type="String">
+                <esf:value>TIMER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="factoryComponent" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="componentDescription" type="String">
+                <esf:value>A wire component that fires a ticking event on every configured interval</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="simple.interval" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="simple.time.unit" type="String">
+                <esf:value>SECONDS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="type" type="String">
+                <esf:value>SIMPLE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.Timer</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="cron.interval" type="String">
+                <esf:value>0/10 * * * * ?</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>TIMER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="emitter.port.count" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="receiver.port.count" type="Integer">
+                <esf:value>0</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="componentName" type="String">
+                <esf:value>Timer</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="org.eclipse.kura.provisioning.ProvisioningService">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="account-name" type="String">
+                <esf:value>eurotech-provision</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="retry-interval" type="Integer">
+                <esf:value>60</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.name" type="String">
+                <esf:value>org.eclipse.kura.provisioning.ProvisioningService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="activation-key" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="ca-authentication" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="retry-max-attempts" type="Integer">
+                <esf:value>-1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="timeout" type="Integer">
+                <esf:value>90</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>org.eclipse.kura.provisioning.ProvisioningService</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="broker-url" type="String">
+                <esf:value>mqtts://broker-sandbox.everyware-cloud.com:8883/</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="true" name="password" type="Password">
+                <esf:value>V2UhY29tZTEyMzQ1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.id" type="Long">
+                <esf:value>58</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="provisioned" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="DataService.target" type="String">
+                <esf:value>(kura.service.pid=org.eclipse.kura.data.DataService)</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="client-id" type="String">
+                <esf:value/>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="CloudConnectionManager.target" type="String">
+                <esf:value>(kura.service.pid=org.eclipse.kura.cloud.CloudService)</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="username" type="String">
+                <esf:value/>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+    <esf:configuration pid="modbusAsset">
+        <esf:properties>
+            <esf:property array="false" encrypted="false" name="LED2#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#+name" type="String">
+                <esf:value>LED2</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="service.factoryPid" type="String">
+                <esf:value>org.eclipse.kura.wire.WireAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#memory.address" type="Integer">
+                <esf:value>515</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="emit.all.channels" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.name" type="String">
+                <esf:value>org.eclipse.kura.wire.WireAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#memory.address" type="Integer">
+                <esf:value>2054</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#+name" type="String">
+                <esf:value>LED4-BLUE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#+name" type="String">
+                <esf:value>Toggle-6</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#+value.type" type="String">
+                <esf:value>INTEGER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#+type" type="String">
+                <esf:value>WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#+name" type="String">
+                <esf:value>Quad-Counter</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#memory.address" type="Integer">
+                <esf:value>2053</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#+name" type="String">
+                <esf:value>LED4-RED</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#memory.address" type="Integer">
+                <esf:value>2053</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#+name" type="String">
+                <esf:value>Counter-3</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#+value.type" type="String">
+                <esf:value>INTEGER</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#memory.address" type="Integer">
+                <esf:value>2051</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#+name" type="String">
+                <esf:value>LED1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#+name" type="String">
+                <esf:value>Reset-quad-counter</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#+name" type="String">
+                <esf:value>Reset-Counter-3</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#+name" type="String">
+                <esf:value>Toggle-4</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#memory.address" type="Integer">
+                <esf:value>2049</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#memory.address" type="Integer">
+                <esf:value>2052</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#memory.address" type="Integer">
+                <esf:value>520</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="component.id" type="Long">
+                <esf:value>83</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#+name" type="String">
+                <esf:value>Toggle-5</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="receiver.port.count" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="driver.pid" type="String">
+                <esf:value>modbusDriver</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#primary.table" type="String">
+                <esf:value>INPUT_REGISTERS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#+name" type="String">
+                <esf:value>LED3</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#primary.table" type="String">
+                <esf:value>COILS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#memory.address" type="Integer">
+                <esf:value>2052</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#primary.table" type="String">
+                <esf:value>INPUT_REGISTERS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.ui.service.hide" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED1#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#primary.table" type="String">
+                <esf:value>DISCRETE_INPUTS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#+enabled" type="Boolean">
+                <esf:value>true</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#+type" type="String">
+                <esf:value>WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-quad-counter#memory.address" type="Integer">
+                <esf:value>3084</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#+name" type="String">
+                <esf:value>LED4-GREEN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#+type" type="String">
+                <esf:value>READ</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Quad-Counter#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Counter-3#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#primary.table" type="String">
+                <esf:value>DISCRETE_INPUTS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Reset-Counter-3#memory.address" type="Integer">
+                <esf:value>3075</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED3#+value.type" type="String">
+                <esf:value>BOOLEAN</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#+listen" type="Boolean">
+                <esf:value>false</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#+type" type="String">
+                <esf:value>READ_WRITE</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED2#memory.address" type="Integer">
+                <esf:value>2050</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="kura.service.pid" type="String">
+                <esf:value>modbusAsset</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="emitter.port.count" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-RED#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#primary.table" type="String">
+                <esf:value>DISCRETE_INPUTS</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-BLUE#memory.address" type="Integer">
+                <esf:value>2054</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-5#array.data.length" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="asset.desc" type="String">
+                <esf:value>EDCK4000</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="LED4-GREEN#data.order" type="String">
+                <esf:value>MSW</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-4#unit.id" type="Integer">
+                <esf:value>1</esf:value>
+            </esf:property>
+            <esf:property array="false" encrypted="false" name="Toggle-6#data.type" type="String">
+                <esf:value>UINT16</esf:value>
+            </esf:property>
+        </esf:properties>
+    </esf:configuration>
+</esf:configurations>
