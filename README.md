@@ -1,7 +1,7 @@
-# IoT Dev Kit 4001 Custom
+# EDCK 4001 Custom Devkit
 ## Overview
 
-The IoT Dev Kit 4001 Custom is a Development Kit for Everyware Device Cloud that provides a learning enviroment and a testbed for IoT/M2M applications; 
+The new EDCK 4001 Custom Devkit is a Development Kit for Everyware Cloud that provides a learning enviroment and a testbed for IoT/M2M applications; 
 it targets professional developers with an Embedded, IT or OT background. 
 
 ![Devkit](readme-images/first.jpg)
@@ -55,7 +55,7 @@ When installed, the ESF local Configuration UI should look like this:
     ![ESF-resulting-graph](readme-images/ModbusWires.png)
 
 ## Pre-Configured Snapshot
-A snapshot is available [here](Snapshots/snapshot_EDCK4001) 
+A snapshot is available [here](Snapshots/snapshot_EDCK4001.xml) 
 When loaded, creates the all the drivers, assets and the needed wire graph for this example.
 A pre-requisite is to have the modbus dp installed from the Eclipse Marketplace.
 
