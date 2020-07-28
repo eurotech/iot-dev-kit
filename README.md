@@ -9,7 +9,9 @@ The IoT Development Kit family targets a variety of IoT application requirements
 **Each IoT Development Kit packages all the necessary hardware and software components to bootstrap a new project: gateway, cable and accessories, network connectivity options, IoT middleware framework, and cloud connectivity.**
 
 ## Available Development Kits
-- [EDCK 4001](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001/README.md)
+- **EDCK 4001**
+  - [old EDCK 4001 (do not use)](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001/README.md)
+  - [EDCK 4001](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001_new/README.md)
 - **IoT Dev Kit 4005**
   - [REGATE-20-25-33-DK00](https://github.com/eurotech/iot-dev-kit/tree/IoT_Dev_Kit_4005)
   - [REGATE-20-25-35-DK00](https://github.com/eurotech/iot-dev-kit/tree/IoT_Dev_Kit_4005)
