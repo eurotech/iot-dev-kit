@@ -21,10 +21,12 @@ The playbook is designed to:
   2. download the specified ESF package from the provided URL
   3. install the ESF package
   4. copy the following files (if present in the `iot-dev-kit/roles/esf_setup/files`) in the correct path in the system:
-    - interfaces
-    - kuranet.conf
-    - iptables
-    - snapshot_0.xml
+
+  - interfaces
+  - kuranet.conf
+  - iptables
+  - snapshot_0.xml
+
   5. reboot the gateway
 
 The user can customize the configuration files before applying the playbook. Moreover, the `iot-dev-kit/roles/linux_setup` folder contains a role that is run before the esf one 
