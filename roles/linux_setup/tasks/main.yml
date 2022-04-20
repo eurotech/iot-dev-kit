@@ -1,0 +1,7 @@
+
+    - name: "Linux Configuration"
+      debug:
+        msg: "Linux Configuration"
+
+    # Put here custom configuration for the OS
+    

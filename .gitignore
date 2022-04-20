@@ -1,0 +1,4 @@
+*.retry
+
+# General
+.DS_Store

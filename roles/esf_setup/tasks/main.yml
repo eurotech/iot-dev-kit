@@ -1,0 +1,86 @@
+
+    - name: "ESF Configuration"
+      debug:
+        msg: "ESF Configuration"
+
+    # Install ESF
+    - name: "Search for ESF package"
+      shell: "rpm -qa | grep {{ esf_name }}"
+      args:
+        warn: false
+      register: rpm_output
+      ignore_errors: yes
+
+    - name: "Remove ESF"
+      shell: "rpm -e {{ esf_name }}"
+      args:
+        warn: false
+      when: "rpm_output.rc == 0"
+    
+    - name: "Remove ESF resources"
+      file:
+        path: /opt/eurotech/esf
+        state: absent
+
+    - name: "Download ESF"
+      get_url:
+        url: "{{ esf_download_url }}"
+        dest: /tmp/
+        checksum: "{{ esf_md5_checksum }}"
+    
+    - name: "Install ESF"
+      shell: rpm -ivh /tmp/{{ esf_installer_filename}}
+      args:
+        warn: false
+
+    - name: "PWD"
+      shell: "pwd"
+
+    # Configure networking if needed
+    - name: "Looking for interfaces file"
+      local_action: stat path=roles/esf_setup/files/interfaces
+      register: file
+
+    - name: "Copy interfaces file"
+      copy: 
+        src: 'interfaces'
+        dest: '/etc/network/'
+        mode: '0644'
+      when: file.stat.exists
+
+    - name: "Looking for iptables file"
+      local_action: stat path=roles/esf_setup/files/iptables
+      register: file
+
+    - name: "Copy iptables file"
+      copy: 
+        src: 'iptables'
+        dest: '/etc/sysconfig/'
+        mode: '0644'
+      when: file.stat.exists
+
+    - name: "Looking for kuranet.conf file"
+      local_action: stat path=roles/esf_setup/files/kuranet.conf
+      register: file
+
+    - name: "Copy kuranet.conf file"
+      copy: 
+        src: 'kuranet.conf'
+        dest: '/opt/eurotech/esf/user/'
+        mode: '0644'
+      when: file.stat.exists
+
+    # Copy custom ESF files
+    - name: "Looking for snapshot_0.xml file"
+      local_action: stat path=roles/esf_setup/files/snapshot_0.xml
+      register: file
+
+    - name: "Copy snapshot_0.xml file"
+      copy: 
+        src: 'snapshot_0.xml'
+        dest: '/opt/eurotech/esf/user/snapshots'
+        mode: '0644'
+      when: file.stat.exists
+
+    - name: Synchronize data
+      shell: sync

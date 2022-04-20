@@ -1,17 +1,31 @@
-# Eurotech IoT Development Kits
-Eurotech IoT Development Kits provide a complete, high-quality design environment for engineers and solution architects to significantly accelerate the development and delivery of new IoT applications. 
+This repo contains a complete and customizable Ansible project to configure ESF in a gateway. It can be used as a replacement of the `recovery_default_config.sh` script for recovering
+the ESF factory configuration or to configure it in dev-kit mode.
 
-The IoT Development Kits bundle industrial grade hardware platforms with pre-installed and configured software development environment so any prototype can be quickly turned into a production ready unit. 
-The kit targets all aspects of an IoT application from hardware interfacing, to development of on-board software, and cloud connectivity. 
+# How to use the Ansible playbook
+To properly configure ESF in a gateway, the whole folder has to be copied on the target device.
+The following variables have to be passed to the playbook:
 
-The IoT Development Kit family targets a variety of IoT application requirements by providing a range of different hardware platforms, spanning from very compact low-power ARM-based designs to powerful multi-core, latest generation Intel Atom gateways. 
+  - **esf_name** the complete name of the ESF to be installed (i.e. esf-dynagate-20-30-el30)
+  - **esf_installer_filename** the name of the ESF installer (i.e. esf-dynagate-20-30-el30-7.1.0-1.corei7_64.rpm )
+  - **esf_download_url** the URL to download the ESF package
+  - **esf_md5_checksum** the md5 of the installer in the form md5:XXXXXXX
 
-**Each IoT Development Kit packages all the necessary hardware and software components to bootstrap a new project: gateway, cable and accessories, network connectivity options, IoT middleware framework, and cloud connectivity.**
+The following command provides an example:
+```
+ansible-playbook iot-dev-kit/site.yml --extra-vars "esf_name=esf-dynagate-20-30-el30 esf_installer_filename=esf-dynagate-20-30-el30-7.1.0-1.corei7_64.rpm esf_download_url=http://172.16.0.100:8000/esf-dynagate-20-30-el30-7.1.0-1.corei7_64.rpm esf_md5_checksum=md5:713617f91a6493565a2c6a9106028563"
+```
 
-## Available Development Kits
-- **EDCK 4001**
-  - [old EDCK 4001 (do not use)](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001/README.md)
-  - [EDCK 4001](https://github.com/eurotech/iot-dev-kit/blob/EDCK_4001_new/README.md)
-- **IoT Dev Kit 4005**
-  - [REGATE-20-25-33-DK00](https://github.com/eurotech/iot-dev-kit/tree/IoT_Dev_Kit_4005)
-  - [REGATE-20-25-35-DK00](https://github.com/eurotech/iot-dev-kit/tree/IoT_Dev_Kit_4005)
+The playbook is designed to:
+
+  1. unistall ESF from the gateway if present
+  2. download the specified ESF package from the provided URL
+  3. install the ESF package
+  4. copy the following files (if present in the `iot-dev-kit/roles/esf_setup/files`) in the correct path in the system:
+    - interfaces
+    - kuranet.conf
+    - iptables
+    - snapshot_0.xml
+  5. reboot the gateway
+
+The user can customize the configuration files before applying the playbook. Moreover, the `iot-dev-kit/roles/linux_setup` folder contains a role that is run before the esf one 
+to further customize the OS.

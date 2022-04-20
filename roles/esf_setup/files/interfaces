@@ -1,0 +1,44 @@
+# /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)
+
+# The loopback interface
+auto lo
+iface lo inet loopback
+
+# Wireless interfaces
+iface wlp1s0 inet dhcp
+
+iface atml0 inet dhcp
+
+# Wired or wireless interfaces
+auto eno1
+iface eno1 inet static
+	address 172.16.0.1
+	netmask 255.255.255.0
+
+# Ethernet/RNDIS gadget (g_ether)
+# ... or on host side, usbnet and random hwaddr
+#??iface usb0 inet static
+# 	address 192.168.7.2
+# 	netmask 255.255.255.0
+# 	network 192.168.7.0
+# 	gateway 192.168.7.1
+
+# Bluetooth networking
+iface bnep0 inet dhcp
+
+auto enp5s0
+iface enp5s0 inet dhcp
+
+#can bus network
+auto can0
+iface can0 inet manual
+    pre-up /sbin/ip link set $IFACE type can bitrate 1000000
+    up /sbin/ifconfig $IFACE up
+    down /sbin/ifconfig $IFACE down
+
+auto can1
+iface can1 inet manual
+    pre-up /sbin/ip link set $IFACE type can bitrate 1000000
+    up /sbin/ifconfig $IFACE up
+    down /sbin/ifconfig $IFACE down
+

@@ -1,0 +1,20 @@
+- name: Configure target gateway
+  hosts: localhost
+  connection: local
+  gather_facts: True
+  vars:
+    # linux default variables
+    # Put here default variables for Linux configuration
+    # esf default variables
+    esf_name: esf-reliagate-10-12-el26
+    esf_installer_filename: "{{ esf_name }}-6.2.0-1.cortexa8hf_neon.rpm"
+    esf_download_url: "https://www.eurotech.com/download/en/download.aspx?url=/PrdEth/ESF%206.2.X/System%20Distribution/{{ esf_name }}-6.2.0-1.cortexa8hf_neon.rpm"
+    esf_md5_checksum: md5:20b98c60ae7b0603d55753c7f1709abf
+
+  roles:
+    - linux_setup
+    - esf_setup
+
+  tasks:
+    - name: Unconditionally reboot the machine
+      shell: reboot
