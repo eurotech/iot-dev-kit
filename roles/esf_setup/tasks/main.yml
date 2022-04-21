@@ -22,19 +22,28 @@
         path: /opt/eurotech/esf
         state: absent
 
+    - name: "Looking for local ESF installer"
+      local_action: "stat path=roles/esf_setup/files/{{ esf_installer_filename }}"
+      register: file
+
+    - name: "Install ESF from local"
+      shell: rpm -ivh roles/esf_setup/files/{{ esf_installer_filename }}
+      args:
+        warn: false
+      when: file.stat.exists
+
     - name: "Download ESF"
       get_url:
         url: "{{ esf_download_url }}"
         dest: /tmp/
         checksum: "{{ esf_md5_checksum }}"
+      when: not file.stat.exists
     
-    - name: "Install ESF"
-      shell: rpm -ivh /tmp/{{ esf_installer_filename}}
+    - name: "Install downloaded ESF package"
+      shell: rpm -ivh /tmp/{{ esf_installer_filename }}
       args:
         warn: false
-
-    - name: "PWD"
-      shell: "pwd"
+      when: not file.stat.exists
 
     # Configure networking if needed
     - name: "Looking for interfaces file"
